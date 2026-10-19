@@ -1,1 +1,70 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  background-color: #0f0f23;
+  overflow-x: hidden;
+}
+
+.pixel-text {
+  font-family: 'Press Start 2P', monospace;
+  text-shadow: 2px 2px 0px #000;
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+/* Pixel border effect */
+.pixel-border {
+  box-shadow: 
+    4px 0 0 0 #4a4a4a,
+    -4px 0 0 0 #4a4a4a,
+    0 4px 0 0 #4a4a4a,
+    0 -4px 0 0 #4a4a4a;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}
+
+/* Animation for shop items */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 5px rgba(74, 222, 128, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(74, 222, 128, 0.6); }
+}
+
+button:not(:disabled):hover {
+  animation: pulse-green 1s infinite;
+}
